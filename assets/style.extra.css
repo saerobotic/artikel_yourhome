@@ -16,6 +16,33 @@
 .hero-article h2 a:hover{color:#F4D1B0}
 .hero-article-bg picture,.hero-article-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
 
+/* Strip "Artikel Lainnya" */
+.trending{background:var(--cream-deep);padding:36px 0;border-bottom:1px solid var(--grey-l)}
+.trending-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px}
+.trending-head h3{font-size:1.35rem;display:flex;align-items:center;gap:10px}
+.trending-head h3::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--terracotta);box-shadow:0 0 0 4px rgba(160,82,45,.18);animation:trend-pulse 1.6s infinite}
+@keyframes trend-pulse{0%,100%{box-shadow:0 0 0 4px rgba(160,82,45,.18)}50%{box-shadow:0 0 0 7px rgba(160,82,45,.06)}}
+.trending-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.trend-card{display:flex;gap:12px;align-items:flex-start;padding:14px;background:var(--white);border-radius:var(--radius-sm);box-shadow:var(--shadow);transition:var(--trans)}
+.trend-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.trend-num{font-family:'Playfair Display',serif;font-style:italic;font-size:1.7rem;font-weight:700;color:var(--terracotta);line-height:1;flex-shrink:0;width:30px}
+.trend-info{display:block}
+.trend-info h5{font-family:'Poppins',sans-serif;font-size:.82rem;font-weight:600;color:var(--coffee-d);line-height:1.45;margin-bottom:5px}
+.trend-card:hover .trend-info h5{color:var(--terracotta)}
+.trend-info span{font-size:.7rem;color:var(--grey);letter-spacing:.06em;text-transform:uppercase}
+
+/* CTA follow (pengganti newsletter palsu, pakai data asli) */
+.newsletter-cta{padding:70px 0;background:linear-gradient(135deg,var(--coffee-d),var(--coffee));color:var(--white);position:relative;overflow:hidden}
+.newsletter-inner{position:relative;z-index:2;text-align:center;max-width:680px;margin:0 auto}
+.newsletter-inner .eyebrow{color:#F4D1B0;justify-content:center}
+.newsletter-inner .eyebrow::before{background:#F4D1B0}
+.newsletter-inner h2{color:var(--white);margin-bottom:1rem}
+.newsletter-inner p{color:rgba(255,255,255,.85);font-size:1.05rem;margin-bottom:2rem}
+.newsletter-form{display:flex;gap:12px;flex-wrap:wrap}
+.news-stats{display:flex;gap:32px;justify-content:center;margin-top:2rem;flex-wrap:wrap}
+.news-stat strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;color:#F4D1B0;line-height:1}
+.news-stat span{font-size:.74rem;color:rgba(255,255,255,.7);letter-spacing:.05em;text-transform:uppercase;margin-top:.3rem;display:block}
+
 /* Kartu: seluruh area bisa diklik lewat tautan judul */
 .article-card{position:relative}
 .article-body h3 a::after{content:"";position:absolute;inset:0;z-index:1}
@@ -141,6 +168,8 @@
   .topbar-right{display:none}
   .hero-article{min-height:58vh;padding:80px 0 44px}
   .article-grid,.related .article-grid{grid-template-columns:1fr;gap:24px}
+  .trending-grid{grid-template-columns:1fr}
+  .newsletter-form{flex-direction:column;align-items:stretch}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
   .footer-bottom{flex-direction:column;text-align:center}
   .author-box{flex-direction:column;text-align:center}

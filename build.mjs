@@ -46,6 +46,7 @@ async function main() {
     cats,
     navCats: cats.filter(category => category.count > 0),
     latest: articles.slice(0, 6),
+    totalPublished: articles.length,
     year: articles.length ? new Date(articles[0].published_at).getFullYear() : new Date().getFullYear(),
     cssVersion: '',
   };
