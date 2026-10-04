@@ -1,0 +1,50 @@
+name: Build & Deploy artikel.yourhome.id
+
+on:
+  # Dipicu Worker begitu admin menerbitkan/mengubah/menghapus artikel (lihat worker-checkin-api.js)
+  repository_dispatch:
+    types: [article-published]
+  # Jaring pengaman untuk artikel yang dijadwalkan terbit nanti (published_at di masa depan)
+  schedule:
+    - cron: '*/15 * * * *'
+  # Tombol manual di tab Actions, kalau perlu build ulang tanpa menunggu
+  workflow_dispatch:
+  # Build ulang kalau template/kode generator berubah
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build situs statis
+        run: node build.mjs
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy ke GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
