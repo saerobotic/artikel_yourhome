@@ -1,5 +1,6 @@
 name: Build & Deploy artikel.yourhome.id
 
+# Trigger manual build karena repository_dispatch dari Worker belum berhasil terkirim (perlu dicek GITHUB_TOKEN di Cloudflare).
 on:
   # Dipicu Worker begitu admin menerbitkan/mengubah/menghapus artikel (lihat worker-checkin-api.js)
   repository_dispatch:
