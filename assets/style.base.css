@@ -108,15 +108,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .logo-text{display:flex;flex-direction:column;line-height:1.05}
 .logo-text strong{font-size:1.15rem;color:var(--coffee-d);font-weight:700;letter-spacing:.05em}
 .logo-text small{font-size:.6rem;letter-spacing:.2em;color:var(--terracotta);font-family:'Poppins',sans-serif;font-weight:500;text-transform:uppercase}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:.9rem;font-weight:500;color:var(--coffee-d);position:relative;transition:var(--trans)}
+.nav-links{display:flex;gap:28px;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--coffee-d);position:relative;transition:var(--trans);white-space:nowrap}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--terracotta);transition:var(--trans)}
 .nav-links a:hover{color:var(--terracotta)}
 .nav-links a:hover::after{width:100%}
 .nav-links a.has-badge{display:flex;align-items:center;gap:6px}
 .nav-links a.has-badge .nav-badge{font-size:.6rem;background:var(--terracotta);color:var(--white);padding:2px 7px;border-radius:50px;font-weight:700;letter-spacing:.05em}
-.nav-actions{display:flex;align-items:center;gap:12px}
-.search-box{position:relative}
+.nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0;min-width:0}
+.search-box{position:relative;flex-shrink:0}
 .search-input{
   width:240px;padding:9px 14px 9px 38px;
   border:1.5px solid var(--grey-l);border-radius:50px;
@@ -126,6 +126,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .search-input:focus{outline:none;border-color:var(--terracotta);width:300px}
 .search-box svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:15px;height:15px;fill:var(--grey)}
 .menu-toggle{display:none;font-size:1.5rem;color:var(--coffee-d);background:transparent;width:40px;height:40px;align-items:center;justify-content:center}
+.nav-actions .btn{white-space:nowrap;flex-shrink:0}
 
 /* ============== HERO FEATURED ============== */
 .hero-article{

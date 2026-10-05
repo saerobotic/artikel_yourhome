@@ -161,6 +161,12 @@
 .side-cta .btn:hover{background:var(--white);color:var(--coffee-d)}
 
 @media (max-width:1100px){
+  .nav-inner{gap:14px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:.82rem}
+  .search-input{width:200px}
+  .search-input:focus{width:240px}
+  .nav-actions .btn{padding:11px 18px}
   .main-grid,.post-layout{grid-template-columns:minmax(0,1fr);gap:48px}
   .sidebar{position:static}
   .related .article-grid{grid-template-columns:repeat(2,1fr)}
@@ -171,6 +177,8 @@
   .menu-toggle{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px 24px;gap:14px;box-shadow:var(--shadow);border-top:1px solid var(--grey-l)}
   .nav-links.open a{width:100%;padding:6px 0}
+  .nav-actions{margin-left:auto}
+  .nav-actions .btn{padding:10px 16px;font-size:.78rem}
   .topbar-right{display:none}
   .hero-article{min-height:58vh;padding:80px 0 44px}
   .article-grid,.related .article-grid{grid-template-columns:1fr;gap:24px}
@@ -181,5 +189,10 @@
   .author-box{flex-direction:column;text-align:center}
   .prose{font-size:1.02rem}
 }
-@media (max-width:480px){.footer-grid{grid-template-columns:1fr}}
+@media (max-width:480px){
+  .nav-inner{gap:10px}
+  .nav-actions .btn{padding:9px 14px;font-size:.74rem;min-width:0}
+  .menu-toggle{width:36px;height:36px}
+  .footer-grid{grid-template-columns:1fr}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
