@@ -99,6 +99,7 @@ async function main() {
   put('sitemap.xml', sitemapXml(articles, ctx.navCats));
   put('robots.txt', robotsTxt());
   put('rss.xml', rssXml(articles));
+  put('google78a935a0a01f8daa.html', await readFile(join(root, 'google78a935a0a01f8daa.html'), 'utf8'));
   put('CNAME', (await readFile(join(root, 'CNAME'), 'utf8')).trim() + '\n');
   put('.nojekyll', '');
 

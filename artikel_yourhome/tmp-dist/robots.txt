@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /cari/
+
+Sitemap: https://artikel.yourhome.id/sitemap.xml
