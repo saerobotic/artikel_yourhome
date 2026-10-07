@@ -178,7 +178,9 @@
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px 24px;gap:14px;box-shadow:var(--shadow);border-top:1px solid var(--grey-l)}
   .nav-links.open a{width:100%;padding:6px 0}
   .nav-actions{margin-left:auto}
-  .nav-actions .btn{padding:10px 16px;font-size:.78rem}
+  .btn,.hero-read-cta,.share a,.share button,.pager a,.pager span{min-height:40px;padding:9px 14px;font-size:.78rem;line-height:1.25}
+  .share a,.share button,.pager a,.pager span{display:inline-flex;align-items:center;justify-content:center}
+  .pager a,.pager span{height:40px;min-width:40px;padding:0 12px}
   .topbar-right{display:none}
   .hero-article{min-height:58vh;padding:80px 0 44px}
   .article-grid,.related .article-grid{grid-template-columns:1fr;gap:24px}
@@ -191,7 +193,6 @@
 }
 @media (max-width:480px){
   .nav-inner{gap:10px}
-  .nav-actions .btn{padding:9px 14px;font-size:.74rem;min-width:0}
   .menu-toggle{width:36px;height:36px}
   .footer-grid{grid-template-columns:1fr}
 }
