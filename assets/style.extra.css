@@ -148,6 +148,7 @@
 .search-result p{font-size:.92rem;margin-top:4px}
 
 .footer-brand .logo-mark{max-width:192px}
+.footer-brand .logo-mark.footer-logo{width:192px;height:58px;object-fit:contain;filter:none}
 .footer-grid{grid-template-columns:1.5fr 1fr 1fr 1.2fr}
 .footer-contact{list-style:none}
 .footer-contact li{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;font-size:.86rem;color:rgba(255,255,255,.7)}

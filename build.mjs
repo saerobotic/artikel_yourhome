@@ -37,6 +37,8 @@ async function main() {
   const cats = CATEGORIES.map(category => ({ ...category, count: articles.filter(article => article.category === category.id).length }));
   const ctx = {
     logo: settings.header_logo && /^https:\/\//.test(settings.header_logo) ? settings.header_logo : SITE.logo,
+    // Logo putih untuk footer: pengaturan yang sama dengan footer yourhome.id (Admin Website → Logo footer).
+    footerLogo: settings.footer_logo && /^https:\/\//.test(settings.footer_logo) ? settings.footer_logo : '',
     contact: {
       location: settings.footer_location || DEFAULT_CONTACT.location,
       phone: settings.footer_phone || DEFAULT_CONTACT.phone,
