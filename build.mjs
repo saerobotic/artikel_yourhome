@@ -59,6 +59,9 @@ async function main() {
   ctx.cssVersion = createHash('sha1').update(minCss).digest('hex').slice(0, 8);
   put('assets/style.css', minCss);
   put('assets/app.js', await readFile(join(root, 'assets/app.js'), 'utf8'));
+  for (const name of ['favicon.ico', 'favicon-48x48.png', 'favicon-96x96.png', 'favicon-192x192.png', 'apple-touch-icon.png']) {
+    put(name, await readFile(join(root, 'assets/favicon', name)));
+  }
 
   // Beranda: artikel terbaru menjadi hero, sisanya dibagi per halaman
   const [hero, ...rest] = articles;
